@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 90687fc3bb9395e4b957ef7ad9be0cfe
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266531
+  packageName: UI Events Selector
+  packageVersion: 1.0.0
+  assetPath: Assets/UITK_EventsSelector/README.txt
+  uploadId: 625939

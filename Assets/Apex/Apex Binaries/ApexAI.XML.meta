@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3d83e359c232494489582b802b163e48
+timeCreated: 1517747254
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 56306
+  packageName: Apex Utility AI - Personal Edition
+  packageVersion: 1.0.7.2
+  assetPath: Assets/Apex/Apex Binaries/ApexAI.XML
+  uploadId: 228122

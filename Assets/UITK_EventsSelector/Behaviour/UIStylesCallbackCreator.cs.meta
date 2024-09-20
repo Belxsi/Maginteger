@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d42d23b15c1653f4abf2b3e076037371
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266531
+  packageName: UI Events Selector
+  packageVersion: 1.0.0
+  assetPath: Assets/UITK_EventsSelector/Behaviour/UIStylesCallbackCreator.cs
+  uploadId: 625939
