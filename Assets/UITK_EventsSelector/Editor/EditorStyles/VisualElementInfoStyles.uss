@@ -1,0 +1,118 @@
+VisualElementInfoProperty{
+	background-color: var(--unity-colors-helpbox-background	);
+	border-color: var(--unity-colors-inspector_titlebar-border);
+	border-width: 1px;
+	border-radius: 3px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 2px;
+	margin-right: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.toggled-button{
+	background-color: var(--unity-colors-button-background-pressed);
+	border-color: var(--unity-colors-button-border-pressed);
+}
+.toggleable-button{
+	border-radius: 0;
+	width:50%;
+	margin-left: 0;
+	margin-right: 0;
+	border-color: var(--unity-colors-inspector_titlebar-border);
+	border-width: 1px;
+}
+.toggleable-content{
+	margin-bottom: -1px;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.toggleable-content > Button{
+	justify-content: center;
+	height: 34px;
+	margin-top: -1px;
+	margin-bottom: 0px;
+	margin-left: -1px;
+	margin-right: -1px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-color: var(--unity-colors-inspector_titlebar-border);
+	border-width: 1px;
+}
+#toggleable-buttons-container{
+	margin-left: -6px;
+	margin-right: -6px;
+}
+#toggleable-buttons-container>Button{
+	margin: 0px;
+}
+#toggleable-buttons-container>#select-element-toggle{
+	border-top-left-radius: 3px;
+}
+#toggleable-buttons-container>#build-query-toggle{
+	border-top-right-radius: 3px;
+}
+.input-container{
+	width:100%;
+}
+.input-container > Label{
+	width: 100%;
+	-unity-text-align: middle-center;
+	border-width: 0px;
+	border-color: var(--unity-colors-inspector_titlebar-border);
+}
+#name-container > Label{
+	border-left-width: 1px;
+	border-right-width: 1px;
+}
+.input-container > TextField{
+	margin: 0px;
+}
+.input-container > TextField > TextInput > TextElement{
+	cursor: text;
+}
+.input-container > TextField > TextInput{
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+#text-type-field>TextInput{
+	border-bottom-right-radius: 0px;
+	padding-right: 0px;
+}
+#text-classes-field>TextInput{
+	border-bottom-left-radius: 0px;
+	padding-right: 0px;
+}
+#text-name-field>TextInput{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	padding-right: 0px;
+}
+#pick-button{
+	background-color: var(--unity-colors-object_field_button-background);
+	position: absolute;
+	right: 0px;
+}
+#pick-button:hover{
+	background-color: var(--unity-colors-object_field_button-background-hover);
+}
+#text-classes-field>TextInput>Image{
+	border-bottom-right-radius: 3px;
+}
+
+#visual-element-info{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#visual-element-info>.toggleable-content > Button{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#visual-element-info>.toggleable-content>.input-container>TextField>TextInput{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#visual-element-info>.toggleable-content>.input-container>TextField>TextInput>#pick-button{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}

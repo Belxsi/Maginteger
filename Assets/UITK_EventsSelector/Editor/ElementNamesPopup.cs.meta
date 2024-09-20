@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 065a1f1a46de5374f9ff212fbfb5b02c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266531
+  packageName: UI Events Selector
+  packageVersion: 1.0.0
+  assetPath: Assets/UITK_EventsSelector/Editor/ElementNamesPopup.cs
+  uploadId: 625939

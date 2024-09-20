@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 0755bb592ad4e3049b50864bf59337fe
+timeCreated: 1456265240
+licenseType: Store
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 1
+      settings: {}
+    Editor:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+    WindowsStoreApps:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 56306
+  packageName: Apex Utility AI - Personal Edition
+  packageVersion: 1.0.7.2
+  assetPath: Assets/Apex/Apex Binaries/ApexSerialization.dll
+  uploadId: 228122

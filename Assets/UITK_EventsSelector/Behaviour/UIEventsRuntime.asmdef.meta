@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 72cffa62c143470478fe3d7778a7a9d8
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266531
+  packageName: UI Events Selector
+  packageVersion: 1.0.0
+  assetPath: Assets/UITK_EventsSelector/Behaviour/UIEventsRuntime.asmdef
+  uploadId: 625939

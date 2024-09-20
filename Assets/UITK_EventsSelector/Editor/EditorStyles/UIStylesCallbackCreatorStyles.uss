@@ -1,0 +1,94 @@
+#inspector-content{
+	margin-left:-15px;
+	margin-right:-6px;
+	margin-top: 2px;
+	margin-bottom: -7px;
+}
+
+
+
+#foldout-element-image{
+	height: 20px;
+	width: 20px;
+	margin-right: 8px;
+}
+#element-foldout > #unity-content{
+	margin: 0px;
+}
+#element-foldout{
+	padding-left: 15px;
+	padding-right: 6px;
+}
+#title-container{
+	margin-left: -15px;
+	margin-right: -6px;
+	margin-top: 0px;
+	margin-bottom: -1px;
+	background-color: var(--unity-colors-inspector_titlebar-background);
+	border-color: var(	--unity-colors-inspector_titlebar-border);
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+}
+#title-container>#arrow{
+	margin-left: 5px;
+	height: 13px;
+	align-self: center;
+}
+#title-container:hover{
+	background-color: var(--unity-colors-inspector_titlebar-background-hover);
+}
+.foldout-error{
+	background-color: rgb(255, 110, 110);
+}
+#element-foldout.foldout-error> #title-container{
+	background-color: rgba(255, 66, 66, 1);
+	color: rgb(100, 10, 10);
+}
+#title-container>#callback-name-field>TextInput{
+	background-color: rgba(0,0,0,0);
+	border-width: 0px;
+	margin: 1px;
+}
+#title-container>#callback-name-field:hover>TextInput, #title-container>#callback-name-field:active>TextInput{
+	border-width: 1px;
+	margin: 0px;
+}
+#title-container>#callback-name-field>TextInput>TextElement{
+	cursor: text;
+}
+
+
+#menu-button{
+	position: absolute;
+	right: 0px;
+	background-image: var(--unity-icons-pane_options); 
+	background-color: rgba(0,0,0,0);
+	border-width: 0px;
+	width: 20px;
+	height: 17px;
+}
+#menu-button:hover{
+	background-color: var(--unity-colors-button-background-hover);
+}
+
+
+ListView{
+	margin-left: 2px;
+	margin-right: 3px;
+	margin-top: -5px;
+}
+ListView>ScrollView{
+	border-top-width: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+#callback-list-element > DropdownField, #callback-parameter-container{
+	width: 50%;
+}
+#callback-parameter-container > .unity-base-field > .unity-base-field__input > TextElement{
+	cursor: text;
+}
+
+.with_name{
+	color: var(--unity-colors-link-text);
+}

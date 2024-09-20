@@ -1,0 +1,49 @@
+#root-element{
+	border-width: 1px;
+	border-color: var(--unity-colors-default-border);
+	border-radius: 2px;
+}
+#visual-element-image{
+	width: 20px;
+}
+#title-container>Label{
+	-unity-text-align: middle-center;
+	margin-left: 3px;
+}
+#title-container{
+	height: 20px;
+}
+.with_name{
+	color: var(--unity-colors-link-text);
+}
+#title-container:hover{
+	background-color: var(--unity-colors-tab-background-hover);
+}
+#title-container:focus{
+	background-color: var(--unity-colors-highlight-background);
+}
+
+#search-bar{
+	align-content: center;
+	border-color: rgba(1,1,1,0.7);
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	margin: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+#search-field{
+	flex-grow: 1;
+	cursor: text;
+}
+#search-field > #unity-text-input{
+	border-radius:7px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.unity-text-field__placeholder > .unity-base-text-field__input {
+    color: #969696
+}
+#search-field > .unity-base-field__input > .unity-text-element{
+	cursor: text;
+}

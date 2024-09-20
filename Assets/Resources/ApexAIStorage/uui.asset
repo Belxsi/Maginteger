@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: uui
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: 9f31ee83-6f8e-44b7-ae16-3c60a4139f9a
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":589b42f90c65428eb149692bb80614fc,"_id":9f31ee836f8e44b7ae163c60a4139f9a,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":589b42f90c65428eb149692bb80614fc,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI"}}]}'
+  editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":100,"@top":100,"@width":200,"@height":0},"DefaultQualifier":{}}}'

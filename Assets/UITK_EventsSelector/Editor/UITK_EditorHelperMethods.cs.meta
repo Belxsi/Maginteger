@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c84c0af9583d8ad48a9dd0853478e7d0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266531
+  packageName: UI Events Selector
+  packageVersion: 1.0.0
+  assetPath: Assets/UITK_EventsSelector/Editor/UITK_EditorHelperMethods.cs
+  uploadId: 625939

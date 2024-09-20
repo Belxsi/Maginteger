@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 79601a28691c5aa47a02a063938c2bb5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266531
+  packageName: UI Events Selector
+  packageVersion: 1.0.0
+  assetPath: Assets/UITK_EventsSelector/Editor/VisualElementInfoProperty.cs
+  uploadId: 625939

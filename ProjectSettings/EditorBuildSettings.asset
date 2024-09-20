@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/AprileFix.unity
+    guid: 1d132348022ca7b48afe7cce660a1b37
+  - enabled: 0
+    path: Assets/Scenes/TestRouglike.unity
+    guid: 0759ea232c3c3ae4c931e44fe77208bb
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/LogoShow.unity
+    guid: 0968fcbcdf9a81a48941875a3d3c5a60
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 9fd30b6d23f33504ea9eda65004f12bc
+  - enabled: 1
+    path: Assets/Scenes/TestingGenerationWorld.unity
+    guid: 94a83393694ff2c4f844944d25f3d8d3
+  - enabled: 0
+    path: Assets/Scenes/GenSpells.unity
+    guid: 0f7655506c3e7b647a129cfb99632b94
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 10558daa9e2952c4fadfac2178d68162, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b69eda35601059f4aa4b16b081838a94, type: 2}
+  m_UseUCBPForAssetBundles: 0

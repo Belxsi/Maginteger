@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b043d2e8439adf54d920b042d25610c1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266531
+  packageName: UI Events Selector
+  packageVersion: 1.0.0
+  assetPath: Assets/UITK_EventsSelector/Behaviour/CustomEvents.cs
+  uploadId: 625939

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 14462a1693809bd4e84ae11e6bd6fa4c
+timeCreated: 1517747254
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 56306
+  packageName: Apex Utility AI - Personal Edition
+  packageVersion: 1.0.7.2
+  assetPath: Assets/Apex/Apex AI Examples and Documentation/GetYourLicense.txt
+  uploadId: 228122
