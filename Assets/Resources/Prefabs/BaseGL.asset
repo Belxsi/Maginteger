@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e246a63bfd7ec6f41b98381ee1a6d75c, type: 3}
+  m_Name: BaseGL
+  m_EditorClassIdentifier: 
+  scale: 28
+  sizefield: 15
+  scaleperlin: 1
+  lenghttonel: 2
+  gate: 0.05
+  minDistantLOD: 34
+  tsc: 0.5
+  Perlin:
+    o: 3.23
+    l: 6.89
+    p: 3.71
+  timeConrol: 2

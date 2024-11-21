@@ -10,7 +10,9 @@ public class VolumeMoveTextureBloomNoise : MonoBehaviour
    
     void Start()
     {
-        if (volume == null) volume.GetComponent<Volume>();
+        
+        BaseFunc.GetOfNull(ref volume, gameObject);
+        
         //Bloom bloom;
         var list = volume.profile.components;
         bloom = (Bloom)list[0];

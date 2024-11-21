@@ -7,10 +7,18 @@ public class TransformConfiguration : MonoBehaviour
     public Waves waves;
     public RotationHis rotation;
     public List<ITransfiguration> list=new();
+    
+    public bool autoadd=true;
     public void Awake()
     {
-        
-        list.Add(waves);
+        if (autoadd)
+        {
+            list.Add(waves);
+            list.Add(rotation);
+        }
+    }
+    public void AddRotation()
+    {
         list.Add(rotation);
     }
     public void Update()
@@ -66,7 +74,15 @@ public class RotationHis : ITransfiguration
         this.transform = transform;
         this.point = point;
     }
-
+    public RotationHis Clone()
+    {
+       
+        return (RotationHis)MemberwiseClone();
+    }
+    public void SetAngle(float m)
+    {
+        angle = m;
+    }
     public override void Use()
     {
         if (!loop) enable = false;

@@ -67,6 +67,7 @@ public class FloatComparisonCond : Condition
                 }
                 else
                 {
+                    break;
                     foreach (var node in nodes)
                     {
                         yield return StartCoroutine(node.ActivatorStart());
@@ -75,6 +76,35 @@ public class FloatComparisonCond : Condition
                 break;
         }
     }
+    public static NodeBeh AddNode<T>(T value, BehaviorExecutor be,float A,float B,TypeComparison type,NodeBeh Els=null) where T : NodeBeh
+    {
+        T node = be.gameObject.AddComponent<T>();
+        node.InitBase(be.tree, be.nodeIstance,A,B,type,Els);
+
+        be.nodeIstance.ReParent(node);
+        be.nodes.Add(node);
+        return node;
+
+    }
+    public FloatComparisonCond(BehaviorExecutor be, float A, float B, TypeComparison type, NodeBeh Els = null)
+    {
+        AddNode(this, be, A, B, type, Els);
+    }
+    public FloatComparisonCond (BehaviorExecutor be, NodeParameter A, NodeParameter B, TypeComparison type, NodeBeh Els = null)
+    {
+        AddNode(this, be,A,B,type,Els);
+}
+    public static NodeBeh AddNode<T>(T value, BehaviorExecutor be, NodeParameter A, NodeParameter B, TypeComparison type, NodeBeh Els = null) where T : NodeBeh
+    {
+        T node = be.gameObject.AddComponent<T>();
+        node.InitBase(be.tree, be.nodeIstance,A,B,type,Els);
+
+        be.nodeIstance.ReParent(node);
+        be.nodes.Add(node);
+        return node;
+
+    }
+   
 }
 
 public enum TypeComparison
@@ -86,3 +116,4 @@ public enum TypeComparison
     GreaterOrEqual,
     LessOrEqual
 }
+

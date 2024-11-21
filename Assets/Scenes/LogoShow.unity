@@ -692,6 +692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 8
+  timeout: 0
+  nameScene: Menu
+  work: 1
 --- !u!1 &1851266420
 GameObject:
   m_ObjectHideFlags: 0

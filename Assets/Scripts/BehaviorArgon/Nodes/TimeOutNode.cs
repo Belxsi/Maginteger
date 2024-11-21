@@ -36,6 +36,7 @@ public class TimeOutNode : NodeBeh
                 break;
             case TaskResult.PROCESS:
                 yield return WaitForEndTask(OnUpdate);
+
                 foreach (var node in nodes)
                 {
                     yield return node.ActivatorStart();
@@ -54,5 +55,19 @@ public class TimeOutNode : NodeBeh
         }
         else
             return TaskResult.COMPLETE;
+    }
+    public static NodeBeh AddNode<T>(T value, BehaviorExecutor be,float time) where T : NodeBeh
+    {
+        T node = be.gameObject.AddComponent<T>();
+        node.InitBase(be.tree, be.nodeIstance, time);
+
+        be.nodeIstance.ReParent(node);
+        be.nodes.Add(node);
+        return node;
+
+    }
+    public TimeOutNode(BehaviorExecutor be, float time)
+    {
+        AddNode(this, be, time);
     }
 }

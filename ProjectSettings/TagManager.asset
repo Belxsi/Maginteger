@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Energy
   - NPC
+  - Gameplay
   layers:
   - Default
   - TransparentFX

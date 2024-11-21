@@ -497,6 +497,7 @@ MonoBehaviour:
     z: 1
     angle: 0.1
     point: {fileID: 482287938}
+  autoadd: 1
 --- !u!114 &105008071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,6 +1036,7 @@ MonoBehaviour:
     z: 1
     angle: 0.2
     point: {fileID: 1965941599}
+  autoadd: 1
 --- !u!114 &166187262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,6 +1418,7 @@ MonoBehaviour:
     z: 1
     angle: 0.3
     point: {fileID: 741553315}
+  autoadd: 1
 --- !u!114 &192778685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2477,6 +2480,7 @@ MonoBehaviour:
     z: 1
     angle: 0.2
     point: {fileID: 567857560}
+  autoadd: 1
 --- !u!114 &258108446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9271,6 +9275,7 @@ MonoBehaviour:
     z: 1
     angle: 0.1
     point: {fileID: 1394557825}
+  autoadd: 1
 --- !u!114 &463914746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9546,6 +9551,7 @@ MonoBehaviour:
     z: 1
     angle: 0.3
     point: {fileID: 437758987}
+  autoadd: 1
 --- !u!114 &500590667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9718,6 +9724,7 @@ MonoBehaviour:
     z: 1
     angle: 0.2
     point: {fileID: 2036163911}
+  autoadd: 1
 --- !u!114 &508221303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9785,28 +9792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f759d1dda21e23b4494cac28b3a78b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 28
-  WorldObject:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  sizefield: 15
-  scaleperlin: 1
-  lenghttonel: 2
   create: 1
-  gate: 0.05
-  minDistantLOD: 34
-  tsc: 0.5
-  perlin:
-    o: 3.23
-    l: 6.89
-    p: 3.71
+  par: {fileID: 11400000, guid: 112f3b997b070c0499cdcee9224d49fd, type: 2}
   dtp: {fileID: 905578373}
-  timeConrol: 2
 --- !u!4 &512697516
 Transform:
   m_ObjectHideFlags: 0
@@ -10554,6 +10542,7 @@ MonoBehaviour:
     z: 1
     angle: 0.1
     point: {fileID: 188585265}
+  autoadd: 1
 --- !u!114 &591437249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11018,7 +11007,7 @@ RectTransform:
   m_Father: {fileID: 1044852660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 4.99823, y: 0}
   m_SizeDelta: {x: 29.9963, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12257,6 +12246,7 @@ MonoBehaviour:
     z: 1
     angle: 0.3
     point: {fileID: 307634279}
+  autoadd: 1
 --- !u!114 &903673361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12311,7 +12301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &905578372
 Transform:
   m_ObjectHideFlags: 0
@@ -12342,6 +12332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a19afe3a86d554c9dfba3a8ace6293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aos: []
   informbar: {fileID: 399089063}
   progress: {fileID: 1804069298}
 --- !u!1 &916086275
@@ -19461,7 +19452,7 @@ GameObject:
   - component: {fileID: 1193308211}
   m_Layer: 0
   m_Name: Gameplay
-  m_TagString: Untagged
+  m_TagString: Gameplay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20145,6 +20136,7 @@ MonoBehaviour:
     z: 1
     angle: 0.1
     point: {fileID: 204239896}
+  autoadd: 1
 --- !u!114 &1292458476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20986,6 +20978,7 @@ MonoBehaviour:
     z: 1
     angle: 0.2
     point: {fileID: 1491939123}
+  autoadd: 1
 --- !u!114 &1376329171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21133,6 +21126,7 @@ MonoBehaviour:
     z: 1
     angle: 0.1
     point: {fileID: 1221365067}
+  autoadd: 1
 --- !u!114 &1423061378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21237,6 +21231,7 @@ MonoBehaviour:
     z: 0
     angle: 0
     point: {fileID: 0}
+  autoadd: 1
 --- !u!1 &1447377490
 GameObject:
   m_ObjectHideFlags: 0
@@ -21905,6 +21900,7 @@ MonoBehaviour:
     z: 1
     angle: 0.3
     point: {fileID: 391573443}
+  autoadd: 1
 --- !u!114 &1629322872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22338,6 +22334,7 @@ MonoBehaviour:
     z: 1
     angle: 0.2
     point: {fileID: 916086276}
+  autoadd: 1
 --- !u!114 &1688516642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22808,6 +22805,7 @@ MonoBehaviour:
     z: 1
     angle: 1
     point: {fileID: 1480065685}
+  autoadd: 1
 --- !u!114 &1768247389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23230,6 +23228,7 @@ MonoBehaviour:
     z: 1
     angle: 0.2
     point: {fileID: 1489107547}
+  autoadd: 1
 --- !u!114 &1834525122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23734,6 +23733,7 @@ MonoBehaviour:
     z: 1
     angle: 0.1
     point: {fileID: 1492998651}
+  autoadd: 1
 --- !u!114 &1865034991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28714,6 +28714,7 @@ MonoBehaviour:
     z: 1
     angle: 0.3
     point: {fileID: 1240729583}
+  autoadd: 1
 --- !u!114 &1876065424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35011,7 +35012,7 @@ RectTransform:
   m_Father: {fileID: 1195732465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -35299,6 +35300,7 @@ MonoBehaviour:
     z: 1
     angle: 0.3
     point: {fileID: 1447377491}
+  autoadd: 1
 --- !u!114 &2079967911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35966,6 +35968,7 @@ MonoBehaviour:
     z: 0
     angle: 0
     point: {fileID: 0}
+  autoadd: 1
 --- !u!114 &2112690820
 MonoBehaviour:
   m_ObjectHideFlags: 0

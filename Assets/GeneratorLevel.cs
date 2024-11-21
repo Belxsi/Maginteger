@@ -7,19 +7,21 @@ using UnityEngine;
 using UnityEngine.AI;
 public class GeneratorLevel : MonoBehaviour
 {
-    public MapLevel mapLevel;
-    public float scale;
-    public List<GameObject> WorldObject;
-    public float sizefield, scaleperlin, lenghttonel;
+    
+    public static List<GameObject> WorldObject=new();
+   
+   
     public bool create;
-    public float gate, minDistantLOD,tsc;
-    public PerlinParam perlin;
-
-    public static bool navmeshgen,mapbuild;
+   
+    
+    public GLParameters par;
+    public static bool navmeshgen, mapbuild, generation;
     public static float randomskeep;
+    public static DonwoloaderTextProgresser _dtp;
     public DonwoloaderTextProgresser dtp;
-    public float timeConrol;
-    public void Clear()
+    public static List<ProgressVisitor> _aos;
+    public static MapLevel _mapLevel;
+    public static void Clear()
     {
         for (int i = 0; i < WorldObject.Count; i++)
         {
@@ -31,15 +33,16 @@ public class GeneratorLevel : MonoBehaviour
     {
         //  StartCoroutine(RepeatCreate());
         mapbuild = false;
+        generation = false;
         randomskeep = 0;
-
+        SetDTP(dtp);
     }
     public static bool Skeep()
     {
        return UnityEngine.Random.Range(0f, 1f) > randomskeep;
     }
    
-    public IEnumerator Visiting(List<ProgressVisitor> aos)
+    public static IEnumerator Visiting(List<ProgressVisitor> aos)
     {
         bool start = false;
         while (true)
@@ -61,33 +64,75 @@ public class GeneratorLevel : MonoBehaviour
             
         }
     }
-    public IEnumerator CreateWorld(List<ProgressVisitor> pvs)
+    public static IEnumerator AOSetActualDTP()
     {
-
-        Time.timeScale = 10;
+        while (generation)
+        {
+            
+            
+            if (_dtp != null)
+            {
+                _dtp.aos = _aos;
+                _dtp.ml = _mapLevel;
+                
+            }
+            yield return new WaitForSeconds(0);
+        }
+    }
+    public static IEnumerator CreateWorld(MonoBehaviour mono, List<ProgressVisitor> pvs,GLParameters par)
+    {
+        _aos = pvs;
+        
+        generation = true;
+        mono.StartCoroutine(AOSetActualDTP());
+        Time.timeScale = 1;
+        if (GameplayPublicField.me.CompareTag("Gameplay")) 
         GameplayPublicField.me.SetActive(false);
-        dtp.gameObject.SetActive(true);
-        dtp.aos = pvs;
+        if (_dtp != null)
+        {
+            _dtp.gameObject.SetActive(true);
+            _dtp.aos = pvs;
+        }
         Clear();
        
-        mapLevel = new MapLevel((int)sizefield, scaleperlin, lenghttonel, perlin, gate);
-        dtp.ml=mapLevel;
-        StartCoroutine(Visiting(pvs));
+        MapLevel mapLevel = new MapLevel((int)par.sizefield, par.scaleperlin, par.lenghttonel, par.Perlin, par.gate);
+        _mapLevel = mapLevel;
+        if (_dtp != null)
+        {
+            _dtp.gameObject.SetActive(true);
+            _dtp.aos = pvs;
+            _dtp.ml = mapLevel;
+        }
+        mono.StartCoroutine(Visiting(pvs));
         yield return mapLevel.Generation(pvs);
+        while (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "TestingGenerationWorld")
+        {
+            yield return new WaitForSeconds(0);
+        }
         ProgressVisitor realiz = new("Создание карты");
         pvs.Add(realiz);
-       
-        yield return Realization(realiz);
+        if (_dtp != null)
+        {
+            _dtp.gameObject.SetActive(true);
+            _dtp.aos = pvs;
+            _dtp.ml = mapLevel;
+        }
+        yield return Realization(realiz,mapLevel,par);
         mapbuild = true;
         Time.timeScale = 1;
         GameplayPublicField.me.SetActive(true);
-        
-        
-        dtp.gameObject.SetActive(false);
 
+        if (_dtp != null)
+        {
+            _dtp.gameObject.SetActive(true);
+            _dtp.aos = pvs;
+            _dtp.ml = mapLevel;
+            _dtp.gameObject.SetActive(false);
+        }
+        generation = false;
     }
 
-    public Quaternion DirToRotation(Vector2Int dir)
+    public static Quaternion DirToRotation(Vector2Int dir)
     {
 
         switch (dir.ToString())
@@ -107,14 +152,14 @@ public class GeneratorLevel : MonoBehaviour
         }
         return Quaternion.identity;
     }
-    public IEnumerator Realization(ProgressVisitor pv)
+    public static IEnumerator Realization(ProgressVisitor pv,MapLevel mapLevel,GLParameters par)
     {
-        Vector2Int offset = mapLevel.first.pos * (int)scale;
+        Vector2Int offset = mapLevel.first.pos * (int)par.scale;
         for (int x = 0; x < mapLevel.sizefield; x++)
             for (int y = 0; y < mapLevel.sizefield; y++)
             {
                 pv.active = true;
-                pv.progress = (sizefield * (float)x + y) / (sizefield *(float)sizefield);
+                pv.progress = (par.sizefield * (float)x + y) / (par.sizefield *(float)par.sizefield);
                 if (mapLevel.map[x, y] != null)
                 {
                     GameObject obj = null ;
@@ -122,14 +167,14 @@ public class GeneratorLevel : MonoBehaviour
                     {
                         case "room":
                             
-                            obj = Instantiate(BaseFunc.GetPrefab("RoomEmpty"), new Vector2(x * scale, y * scale)-offset, Quaternion.identity,GameplayPublicField.BigFather());
+                            obj = Instantiate(BaseFunc.GetPrefab("RoomEmpty"), new Vector2(x * par.scale, y * par.scale)-offset, Quaternion.identity,GameplayPublicField.BigFather());
                             Room room=obj.GetComponent<Room>();
                             room.SetChunck(mapLevel.map[x, y]);
                             room.Init();
                             room.SetCurrentSubVariant();
                             break;
                         case "tonel":
-                            obj = Instantiate(BaseFunc.GetPrefab("Tonel"), new Vector2(x * scale, y * scale) - offset, DirToRotation(mapLevel.map[x, y].dir), GameplayPublicField.BigFather());
+                            obj = Instantiate(BaseFunc.GetPrefab("Tonel"), new Vector2(x * par.scale, y * par.scale) - offset, DirToRotation(mapLevel.map[x, y].dir), GameplayPublicField.BigFather());
                             Tonel tonel = obj.GetComponent<Tonel>();
                             tonel.SetChunck(mapLevel.map[x, y]);
                             tonel.Init();
@@ -151,17 +196,37 @@ public class GeneratorLevel : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
     }
+    public static void SetDTP(DonwoloaderTextProgresser dtp)
+    {
+        _dtp = dtp;
+    }
     void Update()
     {
 
-        Mattery.offsettimeout = timeConrol;
-        Mattery.timeslowcast = tsc;
-
-        if (create)
+        Mattery.offsettimeout = par.timeConrol;
+        Mattery.timeslowcast = par.tsc;
+        
+        if (create&!generation)
         {
             create = false;
-            StartCoroutine( CreateWorld(new List<ProgressVisitor>()));
+            
+            StartCoroutine( CreateWorld(this,new List<ProgressVisitor>(),par));
 
+        }
+        else
+        {
+           
+            create = false;
+        }
+        if (generation)
+        {
+            if (GameplayPublicField.me.CompareTag("Gameplay"))
+                GameplayPublicField.me.SetActive(false);
+        }
+        else
+        {
+            if (GameplayPublicField.me.CompareTag("Gameplay"))
+                GameplayPublicField.me.SetActive(true);
         }
        
        
@@ -172,7 +237,7 @@ public class GeneratorLevel : MonoBehaviour
         for (int i = 0; i < WorldObject.Count; i++)
         {
             Vector2 pos = WorldObject[i].transform.position;
-            WorldObject[i].SetActive((Vector2.Distance(pos, Camera.main.transform.position) < minDistantLOD));
+            WorldObject[i].SetActive((Vector2.Distance(pos, Camera.main.transform.position) < par.minDistantLOD));
 
 
 
@@ -564,6 +629,7 @@ public class MapLevel
         yield return DeleteNotVerify(delete);
     }
 }
+[Serializable]
 public class ProgressVisitor{
     public float progress;
     public bool IsDone;

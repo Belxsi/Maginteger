@@ -93,10 +93,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -335,7 +335,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Default_Smoke_render_all_29_0: -8609289025267515038
+      Default_Smoke_render_all_29_1: 7387445386677633285
+      Default_Smoke_render_all_29_2: -9067436445056262880
+      Default_Smoke_render_all_29_3: 581453334759725491
+      Default_Smoke_render_all_29_4: 6078859800714039535
+      Default_Smoke_render_all_29_5: 7924595365405377610
+      Default_Smoke_render_all_29_6: -668627191005466784
+      Default_Smoke_render_all_29_7: 2901465874452618091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -35,4 +35,18 @@ public class SendMessageNode : NodeBeh
     {
         AddParameter(0, "Text",StringTypePS, vs);
     }
+    public static NodeBeh AddNode<T>(T value, BehaviorExecutor be, string text) where T : NodeBeh
+    {
+        T node = be.gameObject.AddComponent<T>();
+        node.InitBase(be.tree, be.nodeIstance, text);
+
+        be.nodeIstance.ReParent(node);
+        be.nodes.Add(node);
+        return node;
+
+    }
+    public SendMessageNode(BehaviorExecutor be, string text)
+    {
+        AddNode(this, be, text);
+    }
 }

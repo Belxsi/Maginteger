@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestingGenerationWorld.unity
     guid: 94a83393694ff2c4f844944d25f3d8d3
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 254eec7dea89ccf48b15b774cfacc2ff
+  - enabled: 1
+    path: Assets/Scenes/Intro/Intro.unity
+    guid: ec1c02740af5e7a49938a65d94c5398f
   - enabled: 0
     path: Assets/Scenes/GenSpells.unity
     guid: 0f7655506c3e7b647a129cfb99632b94

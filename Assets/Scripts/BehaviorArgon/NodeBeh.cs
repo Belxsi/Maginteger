@@ -10,18 +10,27 @@ public abstract class NodeBeh :MonoBehaviour
     public static List<Type> FloatTypePS = new() { typeof(Single) },
         StringTypePS = new() { typeof(string) },
         IntTypePS = new() { typeof(int) },
+        AudioSourceTypePS = new() { typeof(AudioSource) },
         BoolTypePS = new() { typeof(bool) },
         GameObjectTypePS= new() { typeof(GameObject) },
         NodeBehTypePS = new() { typeof(NodeBeh) },
-        NPCTypePS = new() { typeof(NPCBehaviour),typeof(MasterBehaviourNPC) },
+        NPCTypePS = new() { typeof(NPC) },
+        AnimatorTypePS = new() { typeof(Animator) },
+        NodeParameterTypePS = new() { typeof(NodeParameter) },
         Vector2TypePS = new() { typeof(Vector2),typeof(Vector3) };
+   
     public NodeBeh parent;
     public Vector2Int IndexPos;
     public Dictionary<string,INodeParameter> In = new();
     public Dictionary<string, INodeParameter> Out = new();
     public int unicalkey;
+  
+
     public void InitBase(TreeBehaviour myTree,NodeIstance ni,params object[] vs)
     {
+        In = new();
+        Out = new();
+        nodes = new();
         this.myTree = myTree;
         this.parent = ni.parent;
         
@@ -186,7 +195,7 @@ public abstract class NodeBeh :MonoBehaviour
 
 
     }
-    
+   
 
 }
 

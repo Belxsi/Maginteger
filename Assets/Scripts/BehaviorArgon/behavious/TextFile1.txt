@@ -1,0 +1,14 @@
+﻿ public static NodeBeh AddNode<T>(T value, BehaviorExecutor be ) where T : NodeBeh
+    {
+        T node = be.gameObject.AddComponent<T>();
+        node.InitBase(be.tree, be.nodeIstance);
+
+        be.nodeIstance.ReParent(node);
+        be.nodes.Add(node);
+        return node;
+
+    }
+    public (BehaviorExecutor be)
+    {
+        AddNode(this, be);
+    }

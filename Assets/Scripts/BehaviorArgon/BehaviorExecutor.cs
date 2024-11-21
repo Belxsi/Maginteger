@@ -7,14 +7,20 @@ public abstract class BehaviorExecutor:MonoBehaviour
 {
     public TreeBehaviour tree;
     public NodeIstance nodeIstance;
-    public bool active;
+    public bool active,loop;
     
     
     
     public List<NodeBeh> nodes = new();
     
     public abstract void InitConstruct();
-    public abstract NodeBeh R();
+    public virtual NodeBeh R()
+    {
+        NodeBeh node = gameObject.AddComponent<EmptyNode>();
+
+        return node;
+
+    }
     public virtual void Awake()
     {
         tree = new(R(), this);
@@ -44,10 +50,14 @@ public abstract class BehaviorExecutor:MonoBehaviour
     }
     public virtual void Update()
     {
-       
+
 
         if (active)
+        {
+            active = loop;
             tree.OnInterpreter();
+
+        }
     }
 
 }

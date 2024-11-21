@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,30 @@ public class BaseFunc : MonoBehaviour
         prefabs.Clear();
         
     }
-    
+    public static AudioClip GetAudioClipPrefab(string nam)
+    {
+        AllLoadPrefabs();
+        return (AudioClip)prefabs[nam];
+    }
+    public static void GetOfNull<T>(ref T t, GameObject me)
+    {
+        if (t == null)
+        {
+            t = me.GetComponent<T>();
+            return;
+        }
+
+        if (object.Equals(t.ToString(), "null"))
+        {
+            t = me.GetComponent<T>();
+            return;
+        }
+    }
+    public static bool SmoothStep(float from,float to,float d,out float result)
+    {
+        result = Mathf.SmoothStep(from, to, d);
+        return Equals(result, to);
+    }
     public static void SetPause(bool trfl)
     {
         if (trfl)
@@ -46,6 +70,10 @@ public class BaseFunc : MonoBehaviour
         {
             prefabs.Add(nam, PrefabLoader.Load("Prefabs", nam));
         }
+    }
+    public static T SearchList<T,B>(List<B> list) where T:B
+    {
+        return (T)list.Find(x => x.GetType() == typeof(T));
     }
     public static Vector2 GetPlayerFireDir()
     {
@@ -92,12 +120,24 @@ public class BaseFunc : MonoBehaviour
         }
         return bo;
     }
+    public static T GetScriptableObject<T>(string nam)
+    {
+        AllLoadPrefabs();
+        return (T)prefabs[nam];
+    }
     public static Sprite GetSpritePrefab(string nam)
     {
         AllLoadPrefabs();
 
         Texture tex = (Texture)prefabs[nam];
         return Sprite.Create((Texture2D)tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
+    }
+    public static TextAsset GetTextPrefab(string nam)
+    {
+        AllLoadPrefabs();
+        object v = prefabs[nam];
+        return (TextAsset)v;
+        
     }
     protected static void AllLoadPrefabs()
     {
@@ -111,6 +151,7 @@ public class BaseFunc : MonoBehaviour
             AddPrefab("NPCBars");
             AddPrefab("Grave");
             AddPrefab("Square");
+            AddPrefab("IntroText");
             AddPrefab("Room");
             AddPrefab("RoomEmpty");
             AddPrefab("Tonel");
@@ -119,6 +160,7 @@ public class BaseFunc : MonoBehaviour
             AddPrefab("Win");
             AddPrefab("NPC");
             AddPrefab("DamageNum");
+            AddPrefab("BaseGL");
             AddPrefab("MagicScroll","Items");
         }
     }
@@ -227,5 +269,95 @@ public class BoxPacker<T>
             this.value = value;
         }
         return result;
+    }
+}
+public abstract class OneSet<T>
+{
+    public T value;
+    public bool setted;
+    public abstract bool Set(T value);
+    public OneSet(T value)
+    {
+        this.value = value;
+    }
+    public void ReSet(T value)
+    {
+        if (!this.value.Equals(value))
+        {
+            this.value = value;
+            setted = false;
+        }
+    }
+    public bool One()
+    {
+        if (!setted)
+        {
+            setted = true;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+}
+public class OneSetAction : OneSet<Action>
+{
+    public OneSetAction(Action value) : base(value)
+    {
+        this.value = value;
+    }
+   
+   
+    public void Set()
+    {
+        if(One())
+        value.Invoke();
+    }
+
+    public override bool Set(Action value)
+    {
+        throw new NotImplementedException();
+    }
+}
+public class OneSetObject<T> : OneSet<T>
+{
+    public OneSetObject(T value) : base(value)
+    {
+        this.value = value;
+        
+    }
+    public override bool Set(T value)
+    {
+        ReSet(value);
+        if (One())
+        {
+            return true;
+        }
+        else return false;
+    }
+}
+public class OneSetIEnumerator : OneSet<IEnumerator>
+{
+    MonoBehaviour activator;
+    public OneSetIEnumerator(IEnumerator value,MonoBehaviour activator) : base(value)
+    {
+        this.value = value;
+        this.activator = activator;
+    }
+
+    
+    public void Set()
+    {
+        if (One())
+            activator.StartCoroutine(value);
+            
+            
+    }
+
+    public override bool Set(IEnumerator value)
+    {
+        throw new NotImplementedException();
     }
 }
