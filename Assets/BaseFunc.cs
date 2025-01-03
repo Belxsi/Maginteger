@@ -157,6 +157,7 @@ public class BaseFunc : MonoBehaviour
             AddPrefab("Tonel");
             AddPrefab("RockRoom", "RoomVariants");
             AddPrefab("ForestRoom", "RoomVariants");
+            AddPrefab("StartRoom", "RoomVariants");
             AddPrefab("Win");
             AddPrefab("NPC");
             AddPrefab("DamageNum");

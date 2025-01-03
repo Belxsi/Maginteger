@@ -32,9 +32,13 @@ public class GeneratorLevel : MonoBehaviour
     public void Awake()
     {
         //  StartCoroutine(RepeatCreate());
-        mapbuild = false;
-        generation = false;
-        randomskeep = 0;
+        if (!generation)
+        {
+            mapbuild = false;
+            generation = false;
+            randomskeep = 0;
+           
+        }
         SetDTP(dtp);
     }
     public static bool Skeep()
@@ -612,6 +616,7 @@ public class MapLevel
             }
         if (last != null)
             last.state = "final";
+        first.variant = new("start_room", "room", "StartRoom", 1f);
         pv.IsDone = true;
     }
 
